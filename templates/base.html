@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Personal Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        /* static/css/styles.css */
+
+body {
+    /* display: flex; */
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 20;
+}
+
+.container {
+    /* display: flex; */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080;
+    padding: 30px 30px;
+}
+.navbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+.navbar h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: #004080;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 8px;
+}
+
+p, ul, li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+a.button {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #0066cc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a.button:hover {
+    background-color: #0066cc;
+    color: #fff;
+}
+.profile-section {
+    display: flex;
+    align-items: center;       /* Centers the items vertically */
+    justify-content: center;   /* Centers the items horizontally */
+    padding: 20px;
+    /* gap: 15px;                 Adds space between the image and the text */
+}
+
+.profile-image {
+    display: flex;
+    width: 20px;               /* Set the width of the image */
+    height: 50px;              /* Set the height of the image */
+    /* border-radius: 50%;        Make the image circular */
+}
+
+/* static/css/styles.css */
+
+.social-links {
+    display: flex;
+    justify-content: center;  /* Centers the icons horizontally */
+    /* margin-top: 20px; */
+    gap: 0.1px;                /*Space between icons*/
+}
+
+.social-links a {
+    font-size: 30px;         /* Adjust icon size */
+    text-decoration: none;   /* Remove underline */
+    color: #004080;          /* Default icon color */
+    transition: color 0.3s;  /* Smooth color transition */
+}
+
+.social-links a:hover {
+    color: #0077b5;          /* Color on hover (blue for LinkedIn-like effect) */
+}
+/* static/css/styles.css */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: -0.8px;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: transform 0.3s;  /* Smooth hover scaling */
+}
+
+.social-icon {
+    width: 30px;                /* Set desired icon width */
+    height: 30px;               /* Set desired icon height */
+}
+
+.social-links a:hover .social-icon {
+    transform: scale(1.1);      /* Slightly enlarge icon on hover */
+}
+</style>
+
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="navbar-title" style="text-align: center;">P NAGASRI SREYA</h1>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+        </ul>
+    </div>
+    <div class="profile-image">
+    <img src="{% static 'image/Me.png' %}" alt="Profile" class="profile-image" style="width: 200px; height: 300px; margin-top: 150px; margin-left: 80px;">
+    </div>  
+    
+    <div class="container">
+        
+        {% block content %}{% endblock %}
+    </div>
+    {% comment %} <div class="social-links">
+        <a href="https://github.com/nagasrisreya" target="_blank" title="GitHub">
+        <img src="{% static 'image/git.png' %}" alt="GitHub" class="social-icon"style="width: 50px; height: 50px; margin-top: 5px; margin-left: 10px;">
+        </a>
+        <a href="https://www.linkedin.com/in/punnavajhala-nagasrisreya-02521b32b/" target="_blank" title="LinkedIn">
+        <img src="{% static 'image/linkedin.png' %}" alt="Linkedin" class="social-icon" style="width: 50px; height: 50px; margin-top: 5px; margin-left: 10px;">
+        </a>
+    
+    </div> {% endcomment %}
+
+</body>
+</html>

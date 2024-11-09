@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Home - P NAGASRI SREYA{% endblock %}
+
+{% block content %}
+    <h1>ABOUT ME</h1>
+    <p><strong>Bio:</strong> {{ bio }}</p>
+    <p><strong>Hobbies:</strong> {{ hobbies}}</p>
+    <a href="{% url 'resume' %}" class="button">View My Resume</a><br><br>
+    <h1>CONTACT</h1>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    {% comment %} <p><strong>Linked In:</strong> <a href="https://www.linkedin.com/in/punnavajhala-nagasrisreya-02521b32b/" target="_blank">LinkedIn</a></p> {% endcomment %}
+    {% comment %} <p><strong>Git Hub:</strong> <a href="https://github.com/nagasrisreya/" target="_blank">GitHub</a></p> {% endcomment %}
+    
+    <div class="social-links">
+        <a href="https://github.com/nagasrisreya" target="_blank" title="GitHub">
+            <img src="{% static 'image/git.png' %}" alt="GitHub" class="social-icon"style="width: 60px; height: 50px; margin-top: 5px; margin-left: 0px;">
+            </a>
+            <a href="https://www.linkedin.com/in/punnavajhala-nagasrisreya-02521b32b/" target="_blank" title="LinkedIn">
+            <img src="{% static 'image/linkedin.png' %}" alt="Linkedin" class="social-icon" style="width: 50px; height: 50px; margin-top: 5px; margin-left: 10px;">
+            </a>
+        <br>
+    </div><br>
+    <p style="text-align: center;">&copy; 2024 P.Nagasri.Sreya. All rights reserved.</p>
+    </footer>
+    
+{% endblock %}

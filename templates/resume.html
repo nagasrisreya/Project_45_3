@@ -1,0 +1,40 @@
+<!-- templates/personal_site/resume.html -->
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - Your Name</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    {% block title %}{{ name }}'s Resume{% endblock %}
+    {% block content %}
+    <h2>Experience</h2>
+    <ul>
+        {% for job in experience %}
+        <li>{{ job.position }} at {{ job.Techinical_Fests }} ({{ job.years }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        {% for edu in education %}
+        <li>{{ edu.degree }} - {{ edu.institution }} ({{ edu.years }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}" class="button">Back to Home</a>
+    <p>&copy; 2024 P.Nagasri.Sreya. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+{% endblock %}
